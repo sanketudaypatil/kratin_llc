@@ -1,0 +1,149 @@
+@import "../../../mixins.scss";
+
+.heroBanner {
+    width: 100%;
+    height: 450px;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    position: relative;
+    @include md {
+        height: 700px;
+    }
+    .backdrop-img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+        overflow: hidden;
+        .lazy-load-image-background {
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .opacity-layer {
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(
+            180deg,
+            rgba(242, 243, 245, 0) 0%,
+            #d3d4d6 79.17%
+        );
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .heroBannerContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        text-align: center;
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        .title {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            @include md {
+                margin-bottom: 20px;
+                font-size: 50px;
+            }
+        }
+        .subTitle {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            @include md {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+        }
+        .searchInput {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+            
+                
+
+            
+            button {
+                width: 200px;
+                height: 50px;
+                margin: 20px;
+                padding: 5px;
+                
+                
+                
+                outline: 0;
+                border: 0;
+                border-radius:30px ;
+                font-size: 13px;
+                cursor: pointer;
+                @include md {
+                    width: 300px;
+                    height: 60px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+$color: #0cf;
+
+.button {
+  display: inline-block;
+  padding: .75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+//   letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken($color, 15%);
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      width: 100%;
+    }
+  }
+}
+

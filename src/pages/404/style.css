@@ -1,0 +1,24 @@
+.demos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+  }
+  
+  .box {
+    width: 50%;
+    text-align: center;
+    margin: 20px auto;
+    margin-bottom: 30px;
+    padding: 50px 15px;
+    background-color: #ced7ef;
+    color: gray;
+    vertical-align: middle;
+    height: 30%;
+  }
+  .basic-drop-shadow {
+    box-shadow: 0 0 10px;
+  }
+  .button{
+    margin-top: 4%;
+  }
